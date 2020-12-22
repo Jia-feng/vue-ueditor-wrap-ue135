@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HaoChuan9421/vue-ueditor-wrap.git"
+    "url": "git+https://github.com/Jia-feng/vue-ueditor-wrap-ue135.git"
   },
   "keywords": [
     "ueditor",
@@ -20,12 +20,12 @@
     "富文本编辑器",
     "百度编辑器"
   ],
-  "author": "郑昊川",
-  "license": "MIT",
+  "author": "chen",
+  "license": "CHEN",
   "bugs": {
-    "url": "https://github.com/HaoChuan9421/vue-ueditor-wrap/issues"
+    "url": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135/issues"
   },
-  "homepage": "https://github.com/HaoChuan9421/vue-ueditor-wrap#readme",
+  "homepage": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135.git",
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
