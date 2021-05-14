@@ -1,6 +1,6 @@
 {
-  "name": "vue-ueditor-wrap-ue135",
-  "version": "2.4.4",
+  "name": "vue-ue135",
+  "version": "1.0.0",
   "description": "Vue + UEditor + v-model双向绑定",
   "main": "lib/vue-ueditor-wrap.min.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "百度编辑器"
   ],
   "author": "chen",
-  "license": "CHEN",
   "bugs": {
     "url": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135/issues"
   },
@@ -59,5 +58,9 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "ISC"
 }
