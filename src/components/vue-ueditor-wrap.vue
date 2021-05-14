@@ -158,13 +158,31 @@ export default {
         } else {
           window['$loadEnv'] = new LoadEvent();
           // 如果在其他地方只引用ueditor.all.min.js，在加载ueditor.config.js之后仍需要重新加载ueditor.all.min.js，所以必须确保ueditor.config.js已加载
-          this._loadConfig().then(() => this._loadCore()).then(()=> this._load135()).then(() => {
+          this._loadConfig().then(() => this._loadCore()).then(()=> this._load135()).then(() => this._selectKeywordByIndex()).then(() => {
             resolve();
             window['$loadEnv'].emit('scriptsLoaded');
           });
         }
       });
     },
+    //查找方法
+    _selectKeywordByIndex(){
+      console.log('引入 selectKeywordByIndex.js script');
+      return new Promise((resolve, reject) => {
+        let configScript = document.createElement('script');
+        configScript.type = 'text/javascript';
+        configScript.src = this.mixedConfig.UEDITOR_HOME_URL + 'selectKeywordByIndex.js';
+        document.getElementsByTagName('head')[0].appendChild(configScript);
+        configScript.onload = function () {
+          if (window.UE) {
+            resolve();
+          } else {
+            console.error('加载selectKeywordByIndex.js失败,请检查您的配置地址UEDITOR_HOME_URL填写是否正确!\n', configScript.src);
+          }
+        };
+      });
+    },
+
     //新增方法
     _load135 () {
           return new Promise((resolve, reject) => {
@@ -242,6 +260,12 @@ export default {
       // 函数防抖
       this.observer = new MutationObserver(Debounce(changeHandle, this.observerDebounceTime));
       this.observer.observe(this.editor.body, this.observerOptions);
+    },
+    _selectText(text,index,backJson){
+      this.editor.execCommand("selectkeywordbyindex", {searchStr: text, dir: 1, casesensitive: false, all: 1,index:index,callbackFun:function(rng){
+        backJson(rng);
+      }
+     });
     }
   },
   deactivated () {

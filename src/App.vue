@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div class="preview" v-html="msg"></div>
-    <vue-ueditor-wrap v-model="msg" :config="myConfig" @before-init="addCustomButtom" :key="1" editor-id="editor_one"></vue-ueditor-wrap>
-    <vue-ueditor-wrap v-model="msg" :config="myConfig" @before-init="addCustomDialog" :key="2" editorId="editor-two"></vue-ueditor-wrap>
+    <vue-ueditor-wrap v-model="msg" :config="myConfig" ref="vueUeditorBox" @before-init="addCustomButtom" :key="1" editor-id="editor_one"></vue-ueditor-wrap>
+   <!-- <vue-ueditor-wrap v-model="msg" :config="myConfig" @before-init="addCustomDialog" :key="2" editorId="editor-two"></vue-ueditor-wrap>-->
+   <a @click="chazhao">查找</a>
   </div>
 </template>
 
@@ -134,6 +135,12 @@ export default {
 
         return btn;
       }, 0 /* 指定添加到工具栏上的那个位置，默认时追加到最后 */, editorId /* 指定这个UI是哪个编辑器实例上的，默认是页面上所有的编辑器都会添加这个按钮 */);
+    },
+    chazhao(){
+      this.$refs.vueUeditorBox._selectText("你好",2,this.backJson);
+    },
+    backJson(rng){
+      console.log(top);
     }
   }
 };

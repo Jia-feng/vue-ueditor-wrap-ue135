@@ -18,7 +18,7 @@ const webpackConfig = {
   devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
-      {
+    /*  {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
@@ -27,7 +27,7 @@ const webpackConfig = {
           formatter: require('eslint-friendly-formatter'),
           emitWarning: true
         }
-      },
+      },*/
       {
         test: /\.vue$/,
         loader: 'vue-loader'
