@@ -1,6 +1,6 @@
 {
   "name": "vue-ue135",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue + UEditor + v-model双向绑定",
   "main": "lib/vue-ueditor-wrap.min.js",
   "scripts": {
@@ -8,6 +8,12 @@
     "build": "node build.js",
     "lint": "eslint --ext .js,.vue src",
     "fix": "eslint --fix --ext .js,.vue src"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
@@ -21,10 +27,11 @@
     "百度编辑器"
   ],
   "author": "chen",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135/issues"
   },
-  "homepage": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135.git",
+  "homepage": "https://github.com/Jia-feng/vue-ueditor-wrap-ue135.git#readme",
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -55,12 +62,9 @@
     "uglifyjs-webpack-plugin": "^1.1.1",
     "vue": "^2.5.2",
     "vue-loader": "^13.3.0",
+    "vue-router": "^3.5.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
-  },
-  "directories": {
-    "lib": "lib"
-  },
-  "license": "ISC"
+  }
 }
