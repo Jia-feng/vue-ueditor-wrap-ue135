@@ -296,7 +296,11 @@ export default {
         debounce(changeHandle, this.observerDebounceTime)
       );
       this.observer.observe(this.editor.body, this.observerOptions);
-    }
+    },
+    //  查询定位字符串
+    _setContent (value) {
+      value === this.editor.getContent() || this.editor.setContent(value);
+    },
   },
   deactivated () {
     if (this.editor) {
