@@ -298,9 +298,12 @@ export default {
       this.observer.observe(this.editor.body, this.observerOptions);
     },
     //  查询定位字符串
-    _setContent (value) {
-      value === this.editor.getContent() || this.editor.setContent(value);
-    },
+    _selectText(text,index,backJson){
+      this.editor.execCommand("selectkeywordbyindex", {searchStr: text, dir: 1, casesensitive: false, all: 1,index:index,callbackFun:function(rng){
+          backJson(rng);
+        }
+      });
+    }
   },
   deactivated () {
     if (this.editor) {
