@@ -206,6 +206,7 @@ export default {
         'ueditor.config.js',
         'ueditor.all.min.js',
         '135editor.js',
+        'xiumi-ue-dialog-v5.js',
         'selectKeywordByIndex.js'
       ];
       // 判断上面的默认资源是否已经加载过的校验函数
@@ -350,6 +351,12 @@ export default {
 <style>
   .edui-button.edui-for-135editor .edui-button-wrap .edui-button-body .edui-icon{
     background-image: url("http://static.135editor.com/img/icons/editor-135-icon.png") !important;
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .edui-button.edui-for-xiumi-connect .edui-button-wrap .edui-button-body .edui-icon {
+    background-image: url("https://dl.xiumi.us/connect/ue/xiumi-connect-icon.png") !important;
     background-size: 85%;
     background-position: center;
     background-repeat: no-repeat;
